@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstraFlow - AI Meeting Copilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 sm:p-8 text-gray-800">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center py-16 sm:py-24">
+            <h1 class="text-6xl sm:text-7xl font-extrabold text-gray-900 mb-4 tracking-tighter">
+                Work Reimagined
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-600 font-medium max-w-2xl mx-auto">
+                Automate the boring. Amplify the brilliant.
+            </p>
+        </header>
+
+        <section class="mb-20">
+            <div id="input-card" class="bg-white p-6 sm:p-10 rounded-3xl card-shadow border border-indigo-100/50">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-2">Input Meeting Notes</h2>
+                <p class="text-gray-500 mb-6">Paste your meeting transcript or notes below.</p>
+
+                <textarea id="transcript-input"
+                    class="w-full p-4 h-64 sm:h-80 resize-none border-2 border-indigo-200/50 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 outline-none custom-scrollbar"
+                    placeholder="Example Transcript:&#10;[00:00] Sarah: Hi team, let's discuss Q4 budget.&#10;..."></textarea>
+
+                <button id="analyze-button"
+                    class="mt-6 w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-indigo-700 transition duration-200 transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-indigo-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Analyze Meeting
+                </button>
+                <div id="status-message" class="mt-4 text-center text-sm font-medium text-gray-500 min-h-[1.5rem]"></div>
+            </div>
+        </section>
+
+        <section id="output-section" class="mb-20 hidden">
+            <h2 class="text-4xl font-semibold text-gray-800 mb-8 text-center">AstraFlow Analysis</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl card-shadow border border-indigo-100/50">
+                    <header class="flex justify-between items-start mb-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h3 class="text-2xl font-bold text-indigo-700">Summary</h3>
+                        </div>
+                        <button onclick="copyContent('summary-content', this)" class="copy-button px-3 py-1 text-sm text-gray-500 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-150">Copy</button>
+                    </header>
+                    <div id="summary-content" class="min-h-[150px] p-4 bg-indigo-50 rounded-xl text-gray-700 leading-relaxed text-lg"></div>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-3xl card-shadow border border-indigo-100/50">
+                    <header class="flex justify-between items-start mb-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                            <h3 class="text-2xl font-bold text-indigo-700">Action Items</h3>
+                        </div>
+                        <button onclick="copyContent('actions-content', this)" class="copy-button px-3 py-1 text-sm text-gray-500 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-150">Copy</button>
+                    </header>
+                    <div id="actions-content" class="min-h-[150px] p-4 bg-indigo-50 rounded-xl text-gray-700 leading-relaxed text-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-10 border-t border-gray-200 mt-20">
+            <p class="text-sm text-gray-500">AstraFlow &copy; 2025 | Powered by Google Gemini API</p>
+        </footer>
+
+        <div id="custom-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center p-4 z-50">
+            <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-800 mb-4"></h3>
+                <p id="modal-body" class="text-gray-600 mb-6"></p>
+                <button onclick="closeModal()" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

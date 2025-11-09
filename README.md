@@ -29,6 +29,7 @@ Architecture: Simple client–server setup for easy deployment
 
 Prerequisites:
 Python 3.8+
+
 Google AI Studio API key (Gemini access)
 
 # Clone the repo
@@ -48,4 +49,5 @@ python server.py
 
 Access the app:
 Open frontend/index.html in your browser → http://127.0.0.1:5000
+
 

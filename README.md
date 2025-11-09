@@ -20,9 +20,7 @@ Adaptive UI: Responsive design with light/dark/system themes.
 🧩 Tech Stack
 
 Backend: Python (Flask), SQLite, Google GenAI SDK
-
 Frontend: Html, CSS, JavaScript
-
 Architecture: Simple client–server setup for easy deployment
 
 ⚙️ Installation
@@ -49,5 +47,6 @@ python server.py
 
 Access the app:
 Open frontend/index.html in your browser → http://127.0.0.1:5000
+
 
 

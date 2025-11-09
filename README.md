@@ -6,6 +6,7 @@ AstraFlow streamlines post-meeting workflows by transforming raw notes, transcri
 🧠 Overview
 
 In fast-paced teams, turning discussions into tasks is tedious. AstraFlow automates this process, extracting action items, dates, and schedules from unstructured text — securely and locally.
+
 All processed data is stored in a local SQLite database, ensuring privacy. Only the current note is sent to the AI API for analysis.
 
 ✨ Key Features
@@ -52,6 +53,7 @@ python server.py
 
 Access the app:
 Open frontend/index.html in your browser → http://127.0.0.1:5000
+
 
 
 

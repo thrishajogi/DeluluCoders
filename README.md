@@ -11,8 +11,11 @@ All processed data is stored in a local SQLite database, ensuring privacy. Only 
 ✨ Key Features
 
 Intelligent Text Parsing: Understands informal, non-standardized input using advanced NLP.
+
 Task & Action Extraction: Automatically identifies actionable items from meeting content.
+
 Date & Time Recognition: Converts relative dates (e.g., “next Friday”) to ISO 8601 format.
+
 Calendar Integration: Creates one-click Google Calendar event links.
 Local Data Storage: Keeps all notes and history in a local SQLite database.
 Adaptive UI: Responsive design with light/dark/system themes.
